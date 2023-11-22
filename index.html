@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>015</title>
+    <meta name="description" content="The site of web belonging to emilia the ruler of... nya?">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="015">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://015.sh">
+    <meta property="og:image" content="https://015.sh/icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/foldable.css">
+
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+  <div class="foldable-container-wrapper main-foldable">
+    <div class="foldable-container">
+      <p class="main-headerText">text</p>
+
+      <div class="project-container">
+        <a href="https://lightquark.network">
+        <div class="project-card project-lightquark">
+          Lightquark
+        </div></a>
+        <a href="https://quarkvite.vercel.app">
+        <div class="project-card project-quarkvite">
+          Quarkvite
+        </div></a>
+        <a href="https://jumpsca.re">
+        <div class="project-card project-jumpscare">
+          Jumpscare
+        </div></a>
+        <a href="https://probably.day">
+        <div class="project-card project-probablyday">
+          Probably Day
+        </div></a>
+        <a href="https://auth.litdevs.org">
+        <div class="project-card project-litauth">
+          LITauth
+        </div></a>
+        <a href="https://wanderers.cloud">
+        <div class="project-card project-wanderers">
+          Wanderer's Cloud
+        </div></a>
+        <a href="https://015.sh"><div class="project-card project-015">
+          <span id="text015">015</span>
+          <script>
+            console.log(window.location.href.includes(".moe"))
+            if (window.location.href.includes(".moe")) {
+              console.log("Moe!!")
+              document.querySelector("#text015").innerHTML = "015.sh"
+            } else if (window.location.href.includes(".sh")) {
+              console.log("shel scirp")
+              document.querySelector("#text015").textContent = "015.moe"
+            }
+          </script>
+        </div></a>
+      </div>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="js/oneko.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+/**
+ * Borrowed from Quarkvite
+ **/
+
+.foldable-container {
+    background-color: #dddddd;
+    margin: 1rem 3rem 1rem 4rem;
+    padding: 1rem;
+    clip-path: polygon(1rem 0%, 100% 0%, calc(100% - 1rem) 100%, 0% 100%);
+    color: black;
+    animation: 0.75s ease-out 0s 1 foldableOpen;
+}
+.foldable-container-wrapper {
+    filter: drop-shadow(-1rem 1rem var(--accent));
+    animation: 0.75s ease-out 0s 1 foldableOpen;
+    margin: 0 auto;
+}
+
+@keyframes foldableOpen {
+    0% {
+        transform: scale(0.1, 0.2);
+    }
+    40% {
+        transform: scale(1.05, 0.3);
+    }
+    60% {
+        transform: scale(1, 0.3);
+    }
+    80% {
+        transform: scale(1, 1.05);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
