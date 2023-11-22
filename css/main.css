@@ -1,7 +1,21 @@
 @font-face {
     font-family: "Ubuntu";
-    src: url("assets/fonts/Ubuntu-Regular.ttf");
+    src: url("/assets/fonts/Ubuntu-Regular.ttf");
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("/assets/fonts/Ubuntu-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("/assets/fonts/Ubuntu-Bold.ttf");
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -29,10 +43,21 @@ html {
 
 .main-foldable {
     max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-headerImage {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 100%;
+}
+
+.main-container {
+    padding: 1rem;
 }
 
 @media (min-width: 768px) {
     .main-foldable {
-        max-width: 50%;
+        max-width: min(50%, 50rem);
     }
 }

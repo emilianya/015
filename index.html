@@ -1,74 +1,133 @@
 <!doctype html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <title>015</title>
-    <meta name="description" content="The site of web belonging to emilia the ruler of... nya?">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<title>015</title>
+	<meta name="description" content="The site of web belonging to emilia the ruler of... nya?">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="015">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://015.sh">
-    <meta property="og:image" content="https://015.sh/icon.png">
+	<meta property="og:title" content="015">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://015.sh">
+	<meta property="og:image" content="https://015.sh/icon.png">
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/foldable.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/foldable.css">
 
-    <meta name="theme-color" content="#ffffff">
-  </head>
+	<meta name="theme-color" content="#ffffff">
+</head>
 
-  <body>
-  <div class="foldable-container-wrapper main-foldable">
-    <div class="foldable-container">
-      <p class="main-headerText">text</p>
+<body>
+<div class="foldable-container-wrapper main-foldable">
+	<div class="foldable-container">
+		<!-- TODO: Type "nichijou" for the.webm -->
+		<!-- Kagome Kagome -->
+		<img class="main-headerImage" src="/assets/media/ichigo-kitty.gif"
+		     alt="The character Ichigo from Darling in the FRANXX playing with a black cat"/>
+		<div class="main-container">
 
-      <div class="project-container">
-        <a href="https://lightquark.network">
-        <div class="project-card project-lightquark">
-          Lightquark
-        </div></a>
-        <a href="https://quarkvite.vercel.app">
-        <div class="project-card project-quarkvite">
-          Quarkvite
-        </div></a>
-        <a href="https://jumpsca.re">
-        <div class="project-card project-jumpscare">
-          Jumpscare
-        </div></a>
-        <a href="https://probably.day">
-        <div class="project-card project-probablyday">
-          Probably Day
-        </div></a>
-        <a href="https://auth.litdevs.org">
-        <div class="project-card project-litauth">
-          LITauth
-        </div></a>
-        <a href="https://wanderers.cloud">
-        <div class="project-card project-wanderers">
-          Wanderer's Cloud
-        </div></a>
-        <a href="https://015.sh"><div class="project-card project-015">
-          <span id="text015">015</span>
-          <script>
-            console.log(window.location.href.includes(".moe"))
-            if (window.location.href.includes(".moe")) {
-              console.log("Moe!!")
-              document.querySelector("#text015").innerHTML = "015.sh"
-            } else if (window.location.href.includes(".sh")) {
-              console.log("shel scirp")
-              document.querySelector("#text015").textContent = "015.moe"
+			<p class="main-headerText">text</p>
+
+			<div class="project-container">
+				<a href="https://lightquark.network">
+					<div class="project-card project-lightquark">
+						Lightquark
+					</div>
+				</a>
+				<a href="https://quarkvite.vercel.app">
+					<div class="project-card project-quarkvite">
+						Quarkvite
+					</div>
+				</a>
+				<a href="https://jumpsca.re">
+					<div class="project-card project-jumpscare">
+						Jumpscare
+					</div>
+				</a>
+				<a href="https://probably.day">
+					<div class="project-card project-probablyday">
+						Probably Day
+					</div>
+				</a>
+				<a href="https://auth.litdevs.org">
+					<div class="project-card project-litauth">
+						LITauth
+					</div>
+				</a>
+				<a href="https://wanderers.cloud">
+					<div class="project-card project-wanderers">
+						Wanderer's Cloud
+					</div>
+				</a>
+				<a href="https://015.sh" id="link015">
+					<div class="project-card project-015">
+						<span id="text015">015</span>
+						<script>
+                            console.log(window.location.href.includes(".moe"))
+                            if (window.location.href.includes(".moe")) {
+                                console.log("Moe!!")
+                                document.querySelector("#text015").innerHTML = "015.sh"
+                                document.querySelector("#link015").href = "https://015.sh"
+                            } else if (window.location.href.includes(".sh")) {
+                                console.log("shel scirp")
+                                document.querySelector("#text015").textContent = "015.moe"
+                                document.querySelector("#link015").href = "https://015.moe"
+                            }
+						</script>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/oneko.js"></script>
+<script type="text/javascript">
+    function konami(callback) {
+        let kkeys = [];
+        // up,up,down,down,left,right,left,right,B,A
+        const konami = '38,38,40,40,37,39,37,39,66,65';
+        // nichijou
+        const nichijou = '78,73,67,72,73,74,79,85';
+        return event => {
+            kkeys.push(event.keyCode);
+            if (kkeys.toString().indexOf(konami) >= 0) {
+                console.log("Konami", kkeys)
+                callback(event, "konami");
+                kkeys = [];
+            } else if (kkeys.toString().indexOf(nichijou) >= 0) {
+                console.log("Nichijou", kkeys)
+                callback(event, "nichijou");
+                kkeys = [];
             }
-          </script>
-        </div></a>
-      </div>
-
-    </div>
-  </div>
-  <script type="text/javascript" src="js/oneko.js"></script>
+        };
+    }
+    const handler = konami((event, type) => {
+        console.log(event, type)
+        if (type === "konami") {
+            if (konami.triggered) {
+                console.log("Already playing")
+                return;
+            }
+            konami.triggered = true;
+            let clip = new Audio("/assets/media/kagome-kagome.mp3");
+            clip.volume = 0.2;
+            clip.play()
+            clip.onended = () => {
+                konami.triggered = false;
+                console.log("Done")
+            }
+        } else if (type === "nichijou") {
+            document.querySelectorAll("#oneko").forEach(e => e.remove());
+            clearInterval(onekoSpawner)
+			document.body.parentNode.innerHTML = `<head><meta name="viewport" content="width=device-width"></head><body style="background-color: #000000"><video controls autoplay src="/assets/random/the.webm" type="video/webm" /></body>`
+        }
+    });
+    window.addEventListener('keydown', handler);
+</script>
 </body>
 
 </html>

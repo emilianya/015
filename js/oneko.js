@@ -213,7 +213,7 @@ function oneko() {
 }
 
 // Oneko spawner
-setInterval(() => {
+const onekoSpawner = setInterval(() => {
     const onekos = document.querySelectorAll("#oneko");
     const onekoCount = onekos.length
     if (onekoCount > 7) {
