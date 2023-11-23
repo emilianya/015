@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/foldable.css">
+	<link rel="stylesheet" href="css/project.css">
+	<link rel="stylesheet" href="css/infobox.css">
 
 	<meta name="theme-color" content="#ffffff">
 </head>
@@ -24,45 +26,73 @@
 <body>
 <div class="foldable-container-wrapper main-foldable">
 	<div class="foldable-container">
-		<img class="main-headerImage" src="/assets/media/ichigo-kitty.gif"
-		     alt="The character Ichigo from Darling in the FRANXX playing with a black cat"/>
+		<div class="main-header">
+			<img class="main-headerImage" src="/assets/media/ichigo-kitty.gif"
+			     alt="The character Ichigo from Darling in the FRANXX playing with a black cat"/>
+			<div class="main-infoBox">
+				<img class="infoBox-avatar" src="/assets/t5.png" width="64" alt="">
+
+				<div class="infoBox-column">
+					<span class="infoBox-name"><b>Emilia</b> (<a class="infoBox-link" href="https://en.pronouns.page/@idkusernamehelp">she/they</a>)</span>
+					<div class="infoBox-row" style="margin-left: 0.2rem">
+						<a class="infoBox-link" href="https://emilia0.tumblr.com"><iconify-icon icon="fa-brands:tumblr-square" width="32" height="32"></iconify-icon></a>
+						<a class="infoBox-link" href="https://github.com/emilianya"><iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon></a>
+						<a class="infoBox-link" style="align-self: center" href="https://social.jumpsca.red/@emilia"><iconify-icon icon="skill-icons:misskey-dark" width="28" height="28"></iconify-icon></a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="main-container">
 
-			<p class="main-headerText">text</p>
+			<p class="main-headerText">hewo!!</p>
 
+			<p><b>Projects</b></p>
 			<div class="project-container">
-				<a href="https://lightquark.network">
-					<div class="project-card project-lightquark">
+				<a class="project-card project-lightquark" href="https://lightquark.network">
+					<img alt="" class="project-image project-lightquark" src="/assets/lightquark_banner_textless.png">
+					<div class="project-card-inner project-lightquark">
 						Lightquark
 					</div>
 				</a>
-				<a href="https://quarkvite.vercel.app">
-					<div class="project-card project-quarkvite">
+				<a class="project-card project-quarkvite" href="https://quarkvite.vercel.app">
+					<img alt="" class="project-image project-quarkvite" src="/assets/quarkvite.png">
+					<div class="project-card-inner project-quarkvite">
 						Quarkvite
 					</div>
 				</a>
-				<a href="https://jumpsca.re">
-					<div class="project-card project-jumpscare">
-						Jumpscare
+				<a class="project-card project-jumpscare"href="https://jumpsca.re">
+					<img alt="" class="project-image project-jumpscare" src="/assets/jumpscare.png">
+					<div class="project-card-inner project-jumpscare">
+
 					</div>
 				</a>
-				<a href="https://probably.day">
-					<div class="project-card project-probablyday">
+				<a class="project-card project-probablyday" href="https://probably.day">
+					<img alt="" class="project-image project-probablyday" src="/assets/probablyday.png">
+					<div class="project-card-inner project-probablyday">
 						Probably Day
 					</div>
 				</a>
-				<a href="https://auth.litdevs.org">
-					<div class="project-card project-litauth">
-						LITauth
+				<a class="project-card project-litauth" href="https://auth.litdevs.org">
+					<img alt="" class="project-image project-litauth" src="/assets/litauth.png">
+					<div class="project-card-inner project-litauth">
+
 					</div>
 				</a>
-				<a href="https://wanderers.cloud">
-					<div class="project-card project-wanderers">
+				<a class="project-card project-wanderers" href="https://wanderers.cloud">
+					<img alt="" class="project-image project-wanderers" src="/assets/wanderers.png">
+					<div class="project-card-inner project-wanderers">
 						Wanderer's Cloud
 					</div>
 				</a>
-				<a href="https://015.sh" id="link015">
-					<div class="project-card project-015">
+				<a class="project-card project-vukkybox" href="https://osvb.litdevs.org">
+					<img alt="" class="project-image project-vukkybox" src="/assets/vukkybox.png">
+					<div class="project-card-inner project-vukkybox">
+						Vukkybox (archive)
+					</div>
+				</a>
+				<a class="project-card project-015" href="https://015.sh" id="link015">
+					<img alt="" class="project-image project-015" src="/assets/015sh.gif">
+					<div class="project-card-inner project-015">
 						<span id="text015">015</span>
 						<script>
                             console.log(window.location.href.includes(".moe"))
@@ -79,10 +109,14 @@
 					</div>
 				</a>
 			</div>
+			<footer class="main-footer">
+				<small>footer.</small>
+			</footer>
 		</div>
 	</div>
 </div>
 <script type="text/javascript" src="js/oneko.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <script type="text/javascript">
     function konami(callback) {
         let kkeys = [];

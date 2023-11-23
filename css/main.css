@@ -50,6 +50,7 @@ html {
 .main-headerImage {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     width: 100%;
+    user-select: none;
 }
 
 .main-container {
@@ -60,4 +61,13 @@ html {
     .main-foldable {
         max-width: min(50%, 50rem);
     }
+}
+
+.main-header {
+    position: relative;
+}
+
+.main-footer {
+    text-align: center;
+    color: #737373;
 }

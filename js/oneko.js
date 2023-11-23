@@ -95,6 +95,18 @@ function oneko() {
         document.body.appendChild(nekoEl);
 
         nekoEl.onekoInterval = setInterval(frame, 100);
+
+        nekoEl.moveListener = (e) => {
+            const diffX = nekoPosX - e.pageX;
+            const diffY = nekoPosY - e.pageY;
+            const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
+
+            if (distance < 48) {
+                // eek! mouse is too close!! run away!!!
+                targetPicker()
+            }
+        }
+        document.addEventListener("mousemove", nekoEl.moveListener)
     }
 
     function setSprite(name, frame) {
@@ -171,6 +183,7 @@ function oneko() {
     nekoEl.pickTarget = setInterval(targetPicker, 5000)
     targetPicker()
 
+
     function frame() {
         frameCount += 1;
         const diffX = nekoPosX - mousePosX;
@@ -232,6 +245,7 @@ document.addEventListener("click", (e) => {
         localStorage.setItem("onekoKills", killCount)
         clearInterval(e.target.pickTarget)
         clearInterval(e.target.onekoInterval)
+        document.removeEventListener("mousemove", e.target.moveListener)
         e.target.remove();
     }
 })

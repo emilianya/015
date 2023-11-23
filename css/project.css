@@ -1,0 +1,36 @@
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    position: relative;
+    clip-path: polygon(0.5rem 0%, 100% 0%, calc(100% - 0.5rem) 100%, 0% 100%);
+    display: flex;
+    background-color: var(--accent);
+    max-width: 12rem;
+    margin: 0.2rem;
+    transition: clip-path 0.1s ease-in-out;
+}
+
+.project-card:hover, .project-card:focus {
+    /*clip-path: polygon(0% 0%, calc(100% - 0.5rem) 0%, 100% 100%, 0.5rem 100%);*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.project-card-inner {
+    position: absolute;
+    display: flex;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+
+.project-image {
+    position: relative;
+    height: 100%;
+    width: auto;
+}
