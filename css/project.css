@@ -14,6 +14,11 @@
     max-width: 12rem;
     margin: 0.2rem;
     transition: clip-path 0.1s ease-in-out;
+    color: black;
+}
+
+.project-wanderers {
+    color: white
 }
 
 .project-card:hover, .project-card:focus {
