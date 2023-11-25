@@ -225,27 +225,34 @@ function oneko() {
     create();
 }
 
-// Oneko spawner
-const onekoSpawner = setInterval(() => {
-    const onekos = document.querySelectorAll("#oneko");
-    const onekoCount = onekos.length
-    if (onekoCount > 7) {
-        return;
-    }
-    oneko();
-}, 10000)
-oneko();
+let onekoSpawner;
+function startOnekoHell() {
 
-document.addEventListener("click", (e) => {
-    if (e.target.id === "oneko") {
-        let killCount = localStorage.getItem("onekoKills")
-        killCount = Number(killCount)
-        if (!killCount) killCount = 0
-        killCount++
-        localStorage.setItem("onekoKills", killCount)
-        clearInterval(e.target.pickTarget)
-        clearInterval(e.target.onekoInterval)
-        document.removeEventListener("mousemove", e.target.moveListener)
-        e.target.remove();
-    }
-})
+// Oneko spawner
+    onekoSpawner = setInterval(() => {
+        const onekos = document.querySelectorAll("#oneko");
+        const onekoCount = onekos.length
+        if (onekoCount > 7) {
+            return;
+        }
+        oneko();
+    }, 10000)
+    oneko();
+
+    document.addEventListener("click", (e) => {
+        if (e.target.id === "oneko") {
+            let killCount = localStorage.getItem("onekoKills")
+            killCount = Number(killCount)
+            if (!killCount) killCount = 0
+            killCount++
+            localStorage.setItem("onekoKills", killCount)
+            clearInterval(e.target.pickTarget)
+            clearInterval(e.target.onekoInterval)
+            document.removeEventListener("mousemove", e.target.moveListener)
+            e.target.remove();
+        }
+    })
+}
+
+if (localStorage.getItem("kitty") === "enabled") startOnekoHell()
+else if (localStorage.getItem("nokitty") !== "enabled") oneko();

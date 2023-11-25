@@ -29,8 +29,13 @@
 <div class="foldable-container-wrapper main-foldable">
 	<div class="foldable-container">
 		<div class="main-header">
-			<img class="main-headerImage" src="/assets/media/ichigo-kitty.gif"
+			<img class="main-headerImage" draggable="false" src="/assets/media/ichigo-kitty.gif"
 			     alt="The character Ichigo from Darling in the FRANXX playing with a black cat"/>
+			<div style="display: none" id="discordPopup">
+				<a onclick="toggleDiscord()"><iconify-icon style="vertical-align: text-top" icon="ic:baseline-discord" width="20" height="20"></iconify-icon></a>
+				<span id="discordUsername" onclick="navigator.clipboard.writeText('email.nya');sel()">email.nya</span>
+				<a href="https://discord.gg/lit-devs-868937321402204220">Join LIT Devs</a>
+			</div>
 			<div class="main-infoBox">
 				<img class="infoBox-avatar" src="/assets/t5.png" width="64" alt="">
 
@@ -40,6 +45,23 @@
 						<a class="infoBox-link" href="https://emilia0.tumblr.com"><iconify-icon icon="fa-brands:tumblr-square" width="32" height="32"></iconify-icon></a>
 						<a class="infoBox-link" href="https://github.com/emilianya"><iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon></a>
 						<a class="infoBox-link" style="align-self: center" href="https://social.jumpsca.red/@emilia"><iconify-icon icon="skill-icons:misskey-dark" width="28" height="28"></iconify-icon></a>
+						<a class="infoBox-link" onclick="toggleDiscord()"><iconify-icon icon="ic:baseline-discord" width="32" height="32"></iconify-icon></a>
+						<script>
+							function toggleDiscord() {
+								let discordPopup = document.querySelector("#discordPopup");
+                                const isHidden = discordPopup.style.display === "none";
+                                discordPopup.style.display = isHidden ? "unset" : "none"
+							}
+
+                            function sel() {
+                                let r = document.createRange();
+                                let w = document.getElementById("discordUsername");
+                                r.selectNodeContents(w);
+                                let sel = window.getSelection();
+                                sel.removeAllRanges();
+                                sel.addRange(r);
+                            }
+						</script>
 					</div>
 				</div>
 			</div>
@@ -67,7 +89,7 @@
 					</div>
 				</a>
 				<a class="project-card project-jumpscare" href="https://jumpsca.re">
-					<img alt="" class="project-image project-jumpscare" src="/assets/jumpscare.png">
+					<img alt="jumpsca.re" class="project-image project-jumpscare" src="/assets/jumpscare.png">
 					<div class="project-card-inner project-jumpscare">
 
 					</div>
@@ -79,7 +101,7 @@
 					</div>
 				</a>
 				<a class="project-card project-litauth" href="https://auth.litdevs.org">
-					<img alt="" class="project-image project-litauth" src="/assets/litauth.png">
+					<img alt="LITauth" class="project-image project-litauth" src="/assets/litauth.png">
 					<div class="project-card-inner project-litauth">
 
 					</div>
@@ -101,13 +123,12 @@
 					<div class="project-card-inner project-015">
 						<span id="text015">015</span>
 						<script>
-                            console.log(window.location.href.includes(".moe"))
                             if (window.location.href.includes(".moe")) {
-                                console.log("Moe!!")
+                                console.log("You are browsing on .moe")
                                 document.querySelector("#text015").innerHTML = "015.sh"
                                 document.querySelector("#link015").href = "https://015.sh"
                             } else if (window.location.href.includes(".sh")) {
-                                console.log("shel scirp")
+                                console.log("You are browsing on .sh")
                                 document.querySelector("#text015").textContent = "015.moe"
                                 document.querySelector("#link015").href = "https://015.moe"
                             }
@@ -119,11 +140,13 @@
 				<small>footer.</small><br/>
 				<a href="https://hakase.life"><img src="https://hakase.life/img/buttons/hakase.png" width="88" height="31" alt="" /></a>
 				<a href="https://byemc.xyz"><img src="/assets/bye.png" width="88" height="31" alt="" /></a><br/>
-				<small>© 2015 015.sh</small>
+				<small onclick="alert(`You trigger various things on this site by typing! For example: you can disable the kitty with 'nokitty', or enable kitty murder game with 'kitty' and check your kills with 'kills'.`)" style="cursor: pointer;text-decoration: underline dotted">Help! How do I use this site???</small><br/>
+				<small>© 2036 015.sh</small>
 			</footer>
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript" src="js/oneko.js"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <script type="text/javascript">
@@ -135,6 +158,11 @@
         const nichijou = '78,73,67,72,73,74,79,85';
         // kills
 	    const kills = "75,73,76,76,83";
+        // kitty
+        const kitty = "75,73,84,84,89";
+        // nokitty
+        const nokitty = "78,79,75,73,84,84,89";
+
         return event => {
             kkeys.push(event.keyCode);
             if (kkeys.toString().indexOf(konami) >= 0) {
@@ -145,6 +173,12 @@
                 kkeys = [];
             } else if (kkeys.toString().indexOf(kills) >= 0) {
                 callback(event, "kills");
+                kkeys = [];
+            } else if (kkeys.toString().indexOf(kitty) >= 0 && !(kkeys.toString().indexOf(nokitty) >= 0)) {
+                callback(event, "kitty");
+                kkeys = [];
+            } else if (kkeys.toString().indexOf(nokitty) >= 0) {
+                callback(event, "nokitty");
                 kkeys = [];
             }
         };
@@ -166,9 +200,112 @@
 			document.body.parentNode.innerHTML = `<head><meta name="viewport" content="width=device-width"></head><body style="background-color: #000000;"><video style="position: fixed; width: 100%; height: 100%;" controls autoplay src="/assets/random/the.webm" type="video/webm" onended="window.location.reload()" /></body>`
         } else if (type === "kills") {
             alert(`You have committed murder ${localStorage.getItem("onekoKills") || 0} times`)
+        } else if (type === "kitty") {
+            if (localStorage.getItem("kitty") !== "enabled") {
+                localStorage.setItem("kitty", "enabled")
+                localStorage.setItem("nokitty", "disabled")
+                startOnekoHell()
+            } else {
+                localStorage.setItem("kitty", "disabled")
+                window.location.reload();
+            }
+        } else if (type === "nokitty") {
+            if (localStorage.getItem("nokitty") !== "enabled") {
+                localStorage.setItem("nokitty", "enabled")
+                localStorage.setItem("kitty", "disabled")
+                window.location.reload();
+            } else {
+                localStorage.setItem("nokitty", "disabled")
+                window.location.reload();
+            }
         }
     });
     window.addEventListener('keydown', handler);
+</script>
+<script type="text/javascript">
+    const kitties = [
+        "   ____\n" +
+        "  (.   \\\n" +
+        "    \\  |  \n" +
+        "     \\ |___(\\--/)\n" +
+        "   __/    (  . . )\n" +
+        "  \"'._.    '-.O.'\n" +
+        "       '-.  \\ \"|\\\n" +
+        "          '.,,/'.,,mrf",
+
+        " ((      /|_/|\n" +
+        "  \\\\.._.'  , ,\\\n" +
+        "  /\\ | '.__ v /\n" +
+        " (_ .   /   \"        \n" +
+        "  ) _)._  _ /\n" +
+        " '.\\ \\|( / ( mrf\n" +
+        "   '' ''\\\\ \\\\",
+
+        "   |\\      _,,,---,,_\n" +
+        "   /,`.-'`'    -.  ;-;;,_\n" +
+        "  |,4-  ) )-,_..;\\ (  `'-'\n" +
+        " '---''(_/--'  `-'\\_) ",
+
+        "                   .-o=o-.\n" +
+        "               ,  /=o=o=o=\\ .--.\n" +
+        "              _|\\|=o=O=o=O=|    \\\n" +
+        "          __.'  a`\\=o=o=o=(`\\   /\n" +
+        "          '.   a 4/`|.-\"\"'`\\ \\ ;'`)   .---.\n" +
+        "            \\   .'  /   .--'  |_.'   / .-._)\n" +
+        "             `)  _.'   /     /`-.__.' /\n" +
+        "          jgs `'-.____;     /'-.___.-'\n" +
+        "                       `\"\"\"`",
+
+        "   ╱|、\n" +
+        " (˚ˎ 。7  \n" +
+        "  |、˜〵          \n" +
+        " じしˍ,)ノ",
+
+        "  ∧,,,∧\n" +
+        "(  ̳• · • ̳)\n" +
+        "/    づ♡",
+
+        ": ¨·.·¨ :\n" +
+        " ` ·. 🦋\n" +
+        "                  ╱|、                   \n" +
+        "                (˚ˎ 。7  \n" +
+        "                 |、˜〵          \n" +
+        "                じしˍ,)ノ           ",
+
+        "           _.._      (\\-.)\n" +
+        "         .'    '-._.'  ..\\\n" +
+        "        /   -.     \\  = T/=\n" +
+        "       |      )     `6'-`\n" +
+        "       ; ;   '-._,  /-._\n" +
+        "        \\ \\:-._) '-._)._)\n" +
+        "    jgs  \\ '--.\n" +
+        "          `\"\"`",
+
+        "               _ |\\_      \n" +
+        "               \\` ..\\  \n" +
+        "          __,.-\" =__Y=\n" +
+        "  jgs   .\"        )\n" +
+        "  _    /   ,    \\/\\_  _ \n" +
+        " ((____|    )_-\\ \\_-`(_)\n" +
+        " `-----'`-----` `--`",
+    ]
+
+    function rkitty() {
+        return kitties[Math.floor(Math.random() * kitties.length)]
+    }
+
+    console.log(`Welcome to my website!
+Here is a kitten for you
+
+${rkitty()}
+
+🏳️‍⚧️
+
+You can get a new kitty with kitty()`)
+
+    function kitty() {
+        console.log(rkitty())
+    }
 </script>
 </body>
 

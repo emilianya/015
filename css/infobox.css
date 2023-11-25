@@ -42,8 +42,19 @@
 
 .infoBox-link {
     color: black;
+    cursor: pointer;
 }
 
 .infoBox-link:hover {
     color: #3b3b3b;
+}
+
+#discordPopup {
+    position: absolute;
+    right: 1rem;
+    bottom: 5rem;
+    background-color: #ffa9a9;
+    padding: 1rem;
+    border-radius: 4px;
+    vertical-align: center;
 }
