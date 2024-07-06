@@ -49,18 +49,18 @@
 						<script>
 							function toggleDiscord() {
 								let discordPopup = document.querySelector("#discordPopup");
-                                const isHidden = discordPopup.style.display === "none";
-                                discordPopup.style.display = isHidden ? "unset" : "none"
+                                				const isHidden = discordPopup.style.display === "none";
+                                				discordPopup.style.display = isHidden ? "unset" : "none"
 							}
 
-                            function sel() {
-                                let r = document.createRange();
-                                let w = document.getElementById("discordUsername");
-                                r.selectNodeContents(w);
-                                let sel = window.getSelection();
-                                sel.removeAllRanges();
-                                sel.addRange(r);
-                            }
+			                            	function sel() {
+			                                	let r = document.createRange();
+			                                	let w = document.getElementById("discordUsername");
+			                                	r.selectNodeContents(w);
+			                                	let sel = window.getSelection();
+			                                	sel.removeAllRanges();
+			                                	sel.addRange(r);
+			                            	}
 						</script>
 					</div>
 				</div>
