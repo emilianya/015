@@ -165,6 +165,8 @@
         const konami = '38,38,40,40,37,39,37,39,66,65';
         // nichijou
         const nichijou = '78,73,67,72,73,74,79,85';
+        // nichijou
+        const java = '74,65,86,65';
         // kills
 	    const kills = "75,73,76,76,83";
         // kitty
@@ -188,6 +190,9 @@
                 kkeys = [];
             } else if (kkeys.toString().indexOf(nokitty) >= 0) {
                 callback(event, "nokitty");
+                kkeys = [];
+            } else if (kkeys.toString().indexOf(java) >= 0) {
+                callback(event, "java");
                 kkeys = [];
             }
         };
@@ -227,6 +232,10 @@
                 localStorage.setItem("nokitty", "disabled")
                 window.location.reload();
             }
+        } else if (type === "java") {
+            document.querySelectorAll("#oneko").forEach(e => e.remove());
+            clearInterval(onekoSpawner)
+			document.body.parentNode.innerHTML = `<head><meta name="viewport" content="width=device-width"></head><body style="background-color: #000000;"><img style="position: fixed; max-width: 100%; max-height: 100%;" src="/assets/java.png"/></body>`
         }
     });
     window.addEventListener('keydown', handler);
