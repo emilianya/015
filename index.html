@@ -31,11 +31,6 @@
 		<div class="main-header">
 			<img class="main-headerImage" draggable="false" src="/assets/media/ichigo-bunny.gif"
 			     alt="The character Ichigo from Darling in the FRANXX playing with a black cat"/>
-			<div style="display: none" id="discordPopup">
-				<a onclick="toggleDiscord()"><iconify-icon style="vertical-align: text-top" icon="ic:baseline-discord" width="20" height="20"></iconify-icon></a>
-				<span id="discordUsername" onclick="navigator.clipboard.writeText('email.nya');sel()">email.nya</span>
-				<a href="https://discord.gg/xtRGNuEx5Z">Join my Discord server</a>
-			</div>
 			<div class="main-infoBox">
 				<img class="infoBox-avatar" src="/assets/t5.png" width="64" alt="">
 
@@ -45,23 +40,6 @@
 						<a class="infoBox-link" href="https://emilia0.tumblr.com"><iconify-icon icon="fa-brands:tumblr-square" width="32" height="32"></iconify-icon></a>
 						<a class="infoBox-link" href="https://github.com/emilianya"><iconify-icon icon="mdi:github" width="32" height="32"></iconify-icon></a>
 						<a class="infoBox-link" style="align-self: center" href="https://social.jumpsca.red/@emilia"><iconify-icon icon="skill-icons:misskey-dark" width="28" height="28"></iconify-icon></a>
-						<a class="infoBox-link" onclick="toggleDiscord()"><iconify-icon icon="ic:baseline-discord" width="32" height="32"></iconify-icon></a>
-						<script>
-							function toggleDiscord() {
-								let discordPopup = document.querySelector("#discordPopup");
-                                				const isHidden = discordPopup.style.display === "none";
-                                				discordPopup.style.display = isHidden ? "unset" : "none"
-							}
-
-			                            	function sel() {
-			                                	let r = document.createRange();
-			                                	let w = document.getElementById("discordUsername");
-			                                	r.selectNodeContents(w);
-			                                	let sel = window.getSelection();
-			                                	sel.removeAllRanges();
-			                                	sel.addRange(r);
-			                            	}
-						</script>
 					</div>
 				</div>
 			</div>
@@ -69,11 +47,10 @@
 		<div class="main-container">
 
 			<p class="main-headerText">hewo!!</p>
-			<p>I program, mainly web things as a hobby (see mountain of unfinished
-				<span style="text-decoration: underline dotted; cursor: help" title="Now you might be wondering what the main project is - there isn't one really">side projects</span> below).
-				Enjoyer of video games, <a href="https://myanimelist.net/profile/idkusernamehelp" style="text-decoration: none;color: black;">anime</a> and silly things.</p>
-			<p>Lightquark might be the main project right now, it's basically a Discord/Slack clone with a focus on being way more open and awesome.</p>
-			<p><b>Projects (mostly unfinished)</b></p>
+			<p>I programer and homelab as hobby.
+				Enjoyer of video games, anime and silly things.</p>
+			<p>Poorly trying to make yet another Discord clone</p>
+			<!--<p><b>Projects (mostly unfinished)</b></p>
 			<small>Here are some of the projects I work on! None of them are or will be finished. Your experience of being able to sign up/having an ui/working may vary.</small>
 			<div class="project-container">
 				<a class="project-card project-lightquark" href="https://lightquark.network">
@@ -92,12 +69,6 @@
 					<img alt="jumpsca.re" class="project-image project-jumpscare" src="/assets/jumpscare.png">
 					<div class="project-card-inner project-jumpscare">
 
-					</div>
-				</a>
-				<a class="project-card project-probablyday" href="https://probably.day">
-					<img alt="" class="project-image project-probablyday" src="/assets/probablyday.png">
-					<div class="project-card-inner project-probablyday">
-						Probably Day
 					</div>
 				</a>
 				<a class="project-card project-litauth" href="https://auth.litdevs.org">
@@ -135,7 +106,7 @@
 						</script>
 					</div>
 				</a>
-			</div><br/>
+			</div>--><br/>
 			<footer class="main-footer">
 				<small>footer.</small><br/>
                 <img onclick="alert('hi..? why are you touching me?? stop that')" src="/assets/random/mikuinmywifi.jpg" alt="Hatsune Miku? In my wifi? It's more likely than you think. FREE PC CHECK!" height="128px" /><br />
