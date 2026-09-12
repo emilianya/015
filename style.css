@@ -9,6 +9,7 @@ html {
     #color: #FFF;
     color: #e3e2db;
     background-color: #0C0B04;
+    overflow-x: hidden;
 }
 
 .nal-content {
