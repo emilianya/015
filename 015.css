@@ -1,0 +1,188 @@
+
+.main-headerText {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.main-foldable {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-headerImage {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.main-container {
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .main-foldable {
+        max-width: min(50%, 50rem);
+    }
+}
+
+.main-header {
+    position: relative;
+}
+
+.main-footer {
+    text-align: center;
+    color: #737373;
+}
+
+.main-container {
+    padding: 1rem
+}
+
+/**
+ * Borrowed from Quarkvite
+ **/
+
+.foldable-container {
+    background-color: #dddddd;
+    margin: 1rem 0.75rem 2rem 1.5rem;
+    /* padding: 1rem; */
+    clip-path: polygon(1rem 0%, 100% 0%, calc(100% - 1rem) 100%, 0% 100%);
+    color: black;
+    animation: 0.75s ease-out 0s 1 foldableOpen;
+}
+
+
+@media (min-width: 768px) {
+    .foldable-container {
+        margin: 1rem 3rem 1rem 4rem;
+    }
+}
+
+.foldable-container-wrapper {
+    filter: drop-shadow(-1rem 1rem var(--accent));
+    animation: 0.75s ease-out 0s 1 foldableOpen;
+    margin: 0 auto;
+}
+
+@keyframes foldableOpen {
+    0% {
+        transform: scale(0.1, 0.2);
+    }
+    40% {
+        transform: scale(1.05, 0.3);
+    }
+    60% {
+        transform: scale(1, 0.3);
+    }
+    80% {
+        transform: scale(1, 1.05);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+.project-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    position: relative;
+    clip-path: polygon(0.5rem 0%, 100% 0%, calc(100% - 0.5rem) 100%, 0% 100%);
+    display: flex;
+    background-color: var(--accent);
+    max-width: 12rem;
+    margin: 0.2rem;
+    transition: clip-path 0.1s ease-in-out;
+    color: black;
+}
+
+.project-wanderers {
+    color: white
+}
+
+.project-card:hover, .project-card:focus {
+    /*clip-path: polygon(0% 0%, calc(100% - 0.5rem) 0%, 100% 100%, 0.5rem 100%);*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.project-card-inner {
+    position: absolute;
+    display: flex;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+
+.project-image {
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+
+.main-infoBox {
+    position: absolute;
+    bottom: -0.75rem;
+    right: 1rem;
+    background-color: #ffc2c2;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 0.2rem;
+    clip-path: polygon(1rem 0%, 100% 0%, calc(100% - 1rem) 100%, 0% 100%);
+    display: flex;
+}
+
+.infoBox-avatar {
+    border-radius: 3px;
+    display: inline-block;
+    transition: transform .5s ease-in-out;
+}
+
+.infoBox-avatar:hover {
+    transform: rotate(365deg);
+}
+
+.infoBox-link {
+    color: black;
+    text-decoration: underline dotted;
+}
+
+.infoBox-name {
+    padding: 0.2rem;
+}
+
+.infoBox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoBox-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoBox-link {
+    color: black;
+    cursor: pointer;
+}
+
+.infoBox-link:hover {
+    color: #3b3b3b;
+}
+
+#discordPopup {
+    position: absolute;
+    right: 1rem;
+    bottom: 5rem;
+    background-color: #ffa9a9;
+    padding: 1rem;
+    border-radius: 4px;
+    vertical-align: center;
+}

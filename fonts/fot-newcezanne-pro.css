@@ -1,0 +1,37 @@
+@font-face {
+	font-family: FOT-NewCezanne Pro;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: url('FOT-NewCezanne Pro M.otf') format("opentype");
+	font-display: auto;
+}
+
+@font-face {
+	font-family: FOT-NewCezanne Pro B;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: url('FOT-NewCezanne Pro B.otf') format("opentype");
+	font-display: auto;
+}
+
+
+@font-face {
+	font-family: FOT-NewCezanne Pro DB;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: url('FOT-NewCezanne Pro DB.otf') format("opentype");
+	font-display: auto;
+}
+
+
+@font-face {
+	font-family: FOT-NewCezanne Pro EB;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: url('FOT-NewCezanne Pro EB.otf') format("opentype");
+	font-display: auto;
+}

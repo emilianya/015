@@ -1,0 +1,55 @@
+/* fot-rodin-pro-ub */
+@font-face {
+	font-family: FOT-Rodin Pro UB;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("FOT-Rodin Pro UB"), local("RodinPro-UB"), url(fot-rodin-pro-ub.woff) format("woff");
+	font-display: auto;
+}
+/* fot-rodin-pro-m */
+@font-face {
+	font-family: FOT-Rodin Pro;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("FOT-Rodin Pro M"), local("RodinPro-M"), url(fot-rodin-pro-m.woff) format("woff");
+	font-display: auto;
+}
+/* fot-rodin-pro-l */
+@font-face {
+	font-family: FOT-Rodin Pro L;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("FOT-Rodin Pro L"), local("RodinPro-L"), url(fot-rodin-pro-l.woff) format("woff");
+	font-display: auto;
+}
+/* fot-rodin-pro-eb */
+@font-face {
+	font-family: FOT-Rodin Pro EB;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("FOT-Rodin Pro EB"), local("RodinPro-EB"), url(fot-rodin-pro-eb.woff) format("woff");
+	font-display: auto;
+}
+/* fot-rodin-pro-db */
+@font-face {
+	font-family: FOT-Rodin Pro DB;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("FOT-Rodin Pro DB"), local("RodinPro-DB"), url(fot-rodin-pro-db.woff) format("woff");
+	font-display: auto;
+}
+/* fot-rodin-pro-b */
+@font-face {
+	font-family: FOT-Rodin Pro B;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("FOT-Rodin Pro B"), local("RodinPro-B"), url(fot-rodin-pro-b.woff) format("woff");
+	font-display: auto;
+}
+
