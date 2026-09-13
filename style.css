@@ -343,7 +343,7 @@ body {
 @media screen and (max-width: 1250px) {
     .nal-info-panel {
         position: unset;
-        max-width: 75%;
+        max-width: 75% !important;
         justify-self: center;
         margin-bottom: 2rem;
     }
