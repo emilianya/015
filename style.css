@@ -315,7 +315,8 @@ body {
 }
 
 .nal-grid {
-    position: absolute;
+    position: fixed;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100vw;
@@ -326,4 +327,127 @@ body {
     background-size: 30px;
     user-select: none;
     pointer-events: none;
+
+    /* Vignette thing */
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+}
+
+.nal-info-panel {
+    position: absolute;
+    background-color: #CFC9A7;
+    box-shadow: -1px 1px 2px #46443B10;
+    color: #46443B;
+    padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 1250px) {
+    .nal-info-panel {
+        position: unset;
+        max-width: 75%;
+        justify-self: center;
+        margin-bottom: 2rem;
+    }
+
+    .nal-section-meow {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .line-btm {
+        position: relative !important;
+    }
+
+    .main-headerImage {
+        width: 100% !important;
+    }
+
+}
+
+.line-btm {
+    position: absolute;
+    bottom: 1rem;
+    left:0;
+    width: 100%
+}
+
+.nal-info-panel-profile {
+    width: 25rem;
+    right: 2rem;
+    top: 13rem;
+}
+
+.nal-info-panel-miku {
+    padding-bottom: 0;
+    left: 1rem;
+    bottom: 8rem;
+    max-width: 22.5rem;
+}
+
+.nal-info-panel-miku img {
+    width: min(308px, 100%);
+}
+
+.nal-info-panel-info {
+    padding-bottom: 0;
+    top: 8rem;
+    left: 1rem;
+}
+
+.nal-info-panel-info .nal-info-panel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1rem;
+}
+
+.nal-info-panel-buttons {
+    padding-bottom: 0;
+    left: 25rem;
+    bottom: 7rem;
+}
+
+.nal-info-panel-miku .nal-info-panel-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nal-info-panel-header {
+    background-color: #46443B;
+    color: #D1CBAB;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.nal-info-panel-header span {
+    margin-left: 1rem;
+}
+
+.nal-info-panel-content {
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.nal-info-panel-content > section {
+    border-bottom: #A19B83 1px solid;
+}
+.nal-info-panel-content > section > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nal-info-panel a {
+    color: unset;
+    text-decoration: underline dotted;
+    text-underline-offset: 0.25rem;
+}
+
+.nal-content-wrap {
+    position: relative;
+    height: 100vh;
 }

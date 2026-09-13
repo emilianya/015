@@ -13,7 +13,7 @@
 
 .main-headerImage {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    width: 100%;
+    width: 50%;
     user-select: none;
     -webkit-user-drag: none;
     pointer-events: none;
